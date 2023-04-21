@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "start-prod": "export NODE_ENV='production' && ./node_modules/.bin/pm2-runtime index.js",
+    "stop-prod": "./node_modules/.bin/pm2 stop 0"
+  },
+  "author": "raimonfuns",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "http-status": "^1.6.2",
+    "joi": "^17.9.1",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.4.0",
+    "koa-convert": "^2.0.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^12.0.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^8.0.0",
+    "pm2": "^5.2.0",
+    "rum-sdk-nodejs": "^2.0.2"
+  }
+}
