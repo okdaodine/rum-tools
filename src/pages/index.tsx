@@ -1,9 +1,9 @@
 import { observer } from 'mobx-react-lite';
 import { isMobile } from 'utils/env';
-import { AiOutlineGithub, AiOutlineSync } from 'react-icons/ai';
+import { AiOutlineGithub, AiOutlineSync, AiOutlineSearch } from 'react-icons/ai';
 import { BiChevronRight, BiWallet } from 'react-icons/bi';
 import { RiSeedlingLine, RiListUnordered } from 'react-icons/ri';
-import { MdOutlineGeneratingTokens } from 'react-icons/md';
+import { MdOutlineGeneratingTokens, MdOutlineRocketLaunch } from 'react-icons/md';
 import { TbShieldCheck } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
 import Fade from '@material-ui/core/Fade';
@@ -94,7 +94,7 @@ export default observer(() => {
           </Link>
           <Link to="/trx-viewer">
             <div className="py-4 px-5 flex border border-white/20 rounded-10 cursor-pointer">
-              <RiListUnordered className="w-[30px] h-[30px] text-orange-400/80 mr-4" />
+              <AiOutlineSearch className="w-[30px] h-[30px] text-orange-400/80 mr-4" />
               <div className="flex-1">
                 <div className="flex justify-between">
                   <div className="text-16 tracking-wider">Trx Searcher</div>
@@ -108,7 +108,7 @@ export default observer(() => {
           </Link>
           <Link to="/trx-sender">
             <div className="py-4 px-5 flex border border-white/20 rounded-10 cursor-pointer">
-              <RiListUnordered className="w-[30px] h-[30px] text-orange-400/80 mr-4" />
+              <MdOutlineRocketLaunch className="w-[30px] h-[30px] text-orange-400/80 mr-4" />
               <div className="flex-1">
                 <div className="flex justify-between">
                   <div className="text-16 tracking-wider">Trx Sender</div>
