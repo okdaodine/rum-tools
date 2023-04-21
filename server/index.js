@@ -8,6 +8,7 @@ const cors = require('@koa/cors');
 const router = require('koa-router')();
 const serve = require('koa-static');
 const views = require('koa-views');
+const rumSDK = require('rum-sdk-nodejs');
 
 const content = require('./routes/content');
 const trx = require('./routes/trx');
@@ -39,6 +40,8 @@ router.all('(.*)', extendCtx);
 router.use('/api/contents', content.routes(), content.allowedMethods());
 router.use('/api/trx', trx.routes(), trx.allowedMethods());
 
+app.use(router.routes(), router.allowedMethods());
+
 app.on('error', function (err) {
   console.log(err)
 });
@@ -48,3 +51,6 @@ server.listen(port, () => {
   console.log(`Node.js v${process.versions.node}`);
   console.log(`Server run at ${port}`);
 });
+
+
+rumSDK.cache.Group.clear();

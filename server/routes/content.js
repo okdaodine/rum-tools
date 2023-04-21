@@ -7,7 +7,7 @@ router.get('/', list);
 async function list(ctx) {
   const { seed } = ctx.query;
   assert(seed, Errors.ERR_IS_REQUIRED('seed'));
-  const { groupId } = rumSDK.cache.Group.add(seed);
+  const { groupId } = rumSDK.cache.Group.add(decodeURIComponent(seed));
   const contents = await rumSDK.chain.Content.list({
     groupId,
     count: ctx.query.count || 10,

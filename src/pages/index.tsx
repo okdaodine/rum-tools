@@ -87,7 +87,35 @@ export default observer(() => {
                   <BiChevronRight className="text-[24px] opacity-60" />
                 </div>
                 <div className="mt-2 opacity-50">
-                  List latest trxs of a group.
+                  List latest trxs from a group.
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link to="/trx-viewer">
+            <div className="py-4 px-5 flex border border-white/20 rounded-10 cursor-pointer">
+              <RiListUnordered className="w-[30px] h-[30px] text-orange-400/80 mr-4" />
+              <div className="flex-1">
+                <div className="flex justify-between">
+                  <div className="text-16 tracking-wider">Trx Searcher</div>
+                  <BiChevronRight className="text-[24px] opacity-60" />
+                </div>
+                <div className="mt-2 opacity-50">
+                  Search a trx from a group
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link to="/trx-sender">
+            <div className="py-4 px-5 flex border border-white/20 rounded-10 cursor-pointer">
+              <RiListUnordered className="w-[30px] h-[30px] text-orange-400/80 mr-4" />
+              <div className="flex-1">
+                <div className="flex justify-between">
+                  <div className="text-16 tracking-wider">Trx Sender</div>
+                  <BiChevronRight className="text-[24px] opacity-60" />
+                </div>
+                <div className="mt-2 opacity-50">
+                  Submit a trx to a group
                 </div>
               </div>
             </div>

@@ -9,6 +9,8 @@ import TokenDecoder from './pages/TokenDecoder';
 import TrxValidator from './pages/TrxValidator';
 import Base64Decoder from './pages/Base64Decoder';
 import TrxBrowser from './pages/TrxBrowser';
+import TrxViewer from './pages/TrxViewer';
+import TrxSender from './pages/TrxSender';
 
 import SnackBar from 'components/SnackBar';
 import ConfirmDialog from './components/ConfirmDialog';
@@ -32,6 +34,8 @@ const AppRouter = () => {
           <Route path="/trx-validator" component={TrxValidator} />
           <Route path="/trx-browser" component={TrxBrowser} />
           <Route path="/base64-decoder" component={Base64Decoder} />
+          <Route path="/trx-viewer" component={TrxViewer} />
+          <Route path="/trx-sender" component={TrxSender} />
           <SnackBar />
           <ConfirmDialog />
           <PageLoadingModal />

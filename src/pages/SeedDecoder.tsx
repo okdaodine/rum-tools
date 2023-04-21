@@ -3,7 +3,7 @@ import Fade from '@material-ui/core/Fade';
 import Button from 'components/Button';
 import { useStore } from 'store';
 import { TextField } from '@material-ui/core';
-import RumSdk from 'rum-sdk-browser';
+import rumSDK from 'rum-sdk-browser';
 
 export default observer(() => {
   const { snackbarStore, confirmDialogStore } = useStore();
@@ -13,7 +13,7 @@ export default observer(() => {
 
   const decode = async () => {
     try {
-      const seedJSON = RumSdk.utils.restoreSeedFromUrl(state.seed);
+      const seedJSON = rumSDK.utils.restoreSeedFromUrl(state.seed);
       confirmDialogStore.show({
         content: `
           <div class="-mt-3 justify-center bg-gray-100 dark:bg-black dark:bg-opacity-70 rounded-0 pt-3 px-4 md:px-6 pb-3 leading-7 tracking-wide text-left overflow-auto text-12">

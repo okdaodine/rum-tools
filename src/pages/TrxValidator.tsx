@@ -3,7 +3,7 @@ import Fade from '@material-ui/core/Fade';
 import Button from 'components/Button';
 import { useStore } from 'store';
 import { TextField } from '@material-ui/core';
-import RumSdk from 'rum-sdk-browser';
+import rumSDK from 'rum-sdk-browser';
 
 export default observer(() => {
   const { snackbarStore } = useStore();
@@ -24,7 +24,7 @@ export default observer(() => {
         });
         return;
       }
-      const result = RumSdk.utils.verifyTrx(trx);
+      const result = rumSDK.utils.verifyTrx(trx);
       if (result) {
         snackbarStore.show({
           message: 'Valid',

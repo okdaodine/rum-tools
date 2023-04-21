@@ -3,7 +3,7 @@ const { assert, Errors, throws } = require('../utils/validator');
 const rumSDK = require('rum-sdk-nodejs');
 
 router.post('/', sendTrx);
-router.get('/:trxId', get);
+router.get('/', get);
 
 async function sendTrx(ctx) {
   const payload = ctx.request.body;
@@ -11,7 +11,7 @@ async function sendTrx(ctx) {
   const { seed } = ctx.query;
   assert(seed, Errors.ERR_IS_REQUIRED('seed'));
   try {
-    const { groupId } = rumSDK.cache.Group.add(seed);
+    const { groupId } = rumSDK.cache.Group.add(decodeURIComponent(seed));
     const res = await rumSDK.chain.Trx.send(groupId, payload);
     ctx.body = res;
   } catch (err) {
@@ -28,7 +28,7 @@ async function sendTrx(ctx) {
 async function get(ctx) {
   const { seed, trxId } = ctx.query;
   assert(seed, Errors.ERR_IS_REQUIRED('seed'));
-  const { groupId } = rumSDK.cache.Group.add(seed);
+  const { groupId } = rumSDK.cache.Group.add(decodeURIComponent(seed));
   const trx = await rumSDK.chain.Trx.get(groupId, trxId);
   assert(trx, Errors.ERR_NOT_FOUND('trx'));
   ctx.body = trx;

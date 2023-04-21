@@ -5,7 +5,8 @@ import { StoreProvider } from 'store';
 import Loading from 'components/Loading';
 import { useStore } from 'store';
 import Modal from 'components/Modal';
-import RumSdk, { IDecryptedContent } from 'rum-sdk-browser';
+import { IDecryptedContent } from 'rum-sdk-browser';
+import { ContentApi } from 'apis';
 
 interface IModalProps {
   seed: string
@@ -29,11 +30,9 @@ const Main = observer((props: IModalProps) => {
   React.useEffect(() => {
     (async () => {
       try {
-        const { groupId } = RumSdk.cache.Group.add(props.seed);
-        const contents = await RumSdk.chain.Content.list({
-          groupId,
+        const contents = await ContentApi.list({
+          seed: encodeURIComponent(props.seed),
           count: 10,
-          reverse: true
         });
         state.contents = (contents || []) as IDecryptedContent[];
       } catch (err) {
