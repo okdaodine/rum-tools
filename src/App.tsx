@@ -34,7 +34,7 @@ const AppRouter = () => {
           <Route path="/trx-validator" component={TrxValidator} />
           <Route path="/trx-browser" component={TrxBrowser} />
           <Route path="/base64-decoder" component={Base64Decoder} />
-          <Route path="/trx-search" component={TrxSearcher} />
+          <Route path="/trx-searcher" component={TrxSearcher} />
           <Route path="/trx-sender" component={TrxSender} />
           <SnackBar />
           <ConfirmDialog />

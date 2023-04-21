@@ -40,6 +40,8 @@ router.all('(.*)', extendCtx);
 router.use('/api/contents', content.routes(), content.allowedMethods());
 router.use('/api/trx', trx.routes(), trx.allowedMethods());
 
+router.use('(.*)', async ctx => ctx.render('index'));
+
 app.use(router.routes(), router.allowedMethods());
 
 app.on('error', function (err) {
@@ -51,6 +53,5 @@ server.listen(port, () => {
   console.log(`Node.js v${process.versions.node}`);
   console.log(`Server run at ${port}`);
 });
-
 
 rumSDK.cache.Group.clear();
