@@ -92,7 +92,7 @@ export default observer(() => {
               </div>
             </div>
           </Link>
-          <Link to="/trx-viewer">
+          <Link to="/trx-searcher">
             <div className="py-4 px-5 flex border border-white/20 rounded-10 cursor-pointer">
               <AiOutlineSearch className="w-[30px] h-[30px] text-orange-400/80 mr-4" />
               <div className="flex-1">
